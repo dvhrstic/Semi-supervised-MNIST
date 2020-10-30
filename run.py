@@ -1,5 +1,4 @@
 
-import numpy as np
 from model import NeuralNetworkModel
 from ssl import semi_supervised_learning
 from data import Data

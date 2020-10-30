@@ -32,8 +32,8 @@ class NeuralNetworkModel():
 
     def train(self, X_train, Y_train):
         wrapper_model = KerasClassifier(build_fn=self.define_model, verbose=1)
-        epochs = [1, 5, 10, 20]
-        batch_sizes = [32, 64, 128, 256]
+        epochs = [5, 15]
+        batch_sizes = [128, 256]
         param_grid = dict(epochs=epochs, batch_size=batch_sizes)
         grid = GridSearchCV(estimator=wrapper_model, param_grid=param_grid)
         grid_result = grid.fit(X_train, Y_train)
